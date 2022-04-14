@@ -6,7 +6,7 @@
         $query = mysqli_query($db, "SELECT * FROM food_recomendation WHERE rating ='" . $filter . "'");
         while ($row = mysqli_fetch_object($query)):
 ?>
-          <div class="col-sm filter">
+          <div class="col-sm-auto filter">
             <div class="card" style="width: 15rem">
               <img src="<?= $row->gambar; ?>" class="card-img-top" alt="..." />
               <div class="card-body">
