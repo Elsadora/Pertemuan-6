@@ -3,7 +3,7 @@
         require_once 'db.php';
         $filter = $_POST['filter'];
 
-        $query = mysqli_query($conn, "SELECT * FROM food_recomendation WHERE rating ='" . $filter . "'");
+        $query = mysqli_query($db, "SELECT * FROM food_recomendation WHERE rating ='" . $filter . "'");
         while ($row = mysqli_fetch_object($query)):
 ?>
           <div class="col-sm filter">

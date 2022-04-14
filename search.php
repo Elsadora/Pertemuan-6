@@ -3,7 +3,7 @@
         require_once 'db.php';
         $search = $_POST['search'];
 
-        $query = mysqli_query($conn, "SELECT * FROM food_recomendation WHERE namaMenu LIKE '%" . $search . "%'");
+        $query = mysqli_query($db, "SELECT * FROM food_recomendation WHERE namaMenu LIKE '%" . $search . "%'");
         while ($row = mysqli_fetch_object($query)):
 ?>
           <div class="col-sm filter">
