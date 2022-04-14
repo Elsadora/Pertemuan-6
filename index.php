@@ -35,8 +35,8 @@
           </div>
           <div class="col-sm input-group mb-3">
             <select class="form-select" id="sorting" aria-label="Default select example">
-                <option value="Ascending">Sort by Title Ascending</option>
-                <option value="Descending">Sort by Title Descending</option>
+                <option value="Ascending">Sort by Menu Ascending</option>
+                <option value="Descending">Sort by Menu Descending</option>
                 </select>
           </div>
       </div>
@@ -46,29 +46,33 @@
         $query = mysqli_query($db, "SELECT * FROM food_recomendation");
         while ($row = mysqli_fetch_object($query)) :
         ?>
-        <div class="col-sm">
-            <div class="card mt-4" style="width: 15rem">
-                <img src="<?= $row->gambar; ?>" class="card-img-top" alt="..." />
-                <div class="card-body">
-                    <h5 class="card-title m-1"><?= $row->namaMenu;?></h5>
+          <div class="col-sm filter">
+            <div class="card" style="width: 15rem">
+              <img src="<?= $row->gambar; ?>" class="card-img-top" alt="..." />
+              <div class="card-body">
+                <h5 class="card-title"><?= $row->namaMenu;?></h5>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="d-flex justify-content-start">
                     <p class="card-text m-1"><?= $row->deskripsi;?></p>
-                    <div class="d-flex justify-content-between mt-auto card-content">
-                      <p style="color: orange" class="m-1">
-                        <i class="bi bi-star-fill"><?= $row->rating;?></i></p>
-                      <div class="card-btn pe-4">
-                        <a href="#"><i class="bi bi-pencil-fill"></i></a>
-                        <a href="#" class="text-danger"
-                            ><i class="bi bi-trash3-fill"></i
-                        ></a>
-                      </div>
+                    <p style="color: orange" class="m-1">
+                      <i class="bi bi-star-fill"><?= $row->rating;?></i></p>
+                  </div>
+                  <div class="d-flex justify-content-end">
+                    <div class="card-btn pe-4">
+                    <a href="#"><i class="bi bi-pencil-fill"></i></a>
+                    <a href="#" class="text-danger"
+                        ><i class="bi bi-trash3-fill"></i
+                    ></a>
                     </div>
+                  </div>
                 </div>
+              </div>
             </div>
-        </div>
+          </div>  
         <?php endwhile; ?>
       </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="Bootstrap/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
     <script type="text/javascript">
       $(document).ready(function() {
